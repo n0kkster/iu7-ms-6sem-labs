@@ -1,0 +1,69 @@
+\section{Теоретическая часть}
+\subsection{Формулы для вычисления величин}
+Пусть \( \vec{X} = (X_1, \ldots, X_n) \) --- случайная выборка из генеральной
+совокупности \( X \), а \( \vec{x} = (x_1, \ldots, x_n) \) --- реализация этой выборки.
+Расположим элементы выборки \( \vec{x} \) в порядке неубывания, \( i \)-тый элемент 
+полученной последовательности обозначим \( x_{(i)} \), \( i = \overline{1, n} \): 
+\( x_{(1)} \leq \dots \leq x_{(n)} \).
+
+Тогда максимальное значение выборки вычисляется по формуле~\ref{eq:s-max},
+\begin{equation} \label{eq:s-max}
+    M_{max} = x_{(n)} = \max\{x_1, \ldots, x_n\},
+\end{equation}
+
+минимальное значение выборки вычисляется по формуле~\ref{eq:s-min},
+\begin{equation} \label{eq:s-min}
+    M_{min} = x_{(1)} = \min\{x_1, \ldots, x_n\},
+\end{equation}
+
+размах вычисляется по формуле~\ref{eq:s-ampl},
+\begin{equation} \label{eq:s-ampl}
+    R = M_{max} - M_{min} = x_{(n)} - x_{(1)},
+\end{equation}
+
+выборочное среднее вычисляется по формуле~\ref{eq:mean},
+\begin{equation} \label{eq:mean}
+    \hat{\mu}(\vec{x}) = \overline{x} = \frac{1}{n}\sum_{i=1}^{n}x_i,
+\end{equation}
+
+исправленная выборочная дисперсия вычисляется по формуле~\ref{eq:var},
+\begin{equation} \label{eq:var}
+    S^2(\vec{x}) = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x} )^2.
+\end{equation}
+
+\subsection{Определение эмпирической функции плотности и гистограммы}
+Пусть
+\begin{itemize}
+    \item \( \vec{X} = (X_1, \ldots, X_n) \) --- случайная выборка из распределения случайной
+        величины \( X \), а \( \vec{x}_n = (x_1, \ldots, x_n) \) --- реализация этой выборки;
+    \item отрезок \( [x_{(1)}, \enspace x_{(n)} ] \) разбит на \( m \in \mathbb{N} \) непересекающихся полуинтервалов
+        \( J_1, \ldots, J_m \)  длины \( \Delta = \frac{(x_{(n)} - x_{(1)})}{m} \), где
+        \begin{equation*}
+            J_i = [x_{(1)} + \Delta \cdot (i - 1); \enspace x_{(1)} + \Delta \cdot i ), i = \overline{1, (m - 1)},
+        \end{equation*} 
+        \begin{equation*}
+            J_m = [x_{(n)} - \Delta; \enspace x_{(n)}];
+        \end{equation*}
+    \item \( n_i \) --- число наблюдений, попавших в полуинтервал \( J_i \), \( i = \overline{1, m} \);
+\end{itemize}
+тогда эмпирической функцией плотности называется функция
+\begin{equation*}
+    f_n(x) =
+     \begin{cases}
+        \frac{n_i}{\Delta \cdot n}, x_i \in J_i, \\
+        0, \text{иначе}. 
+    \end{cases}
+\end{equation*}
+
+График эмпирической функции плотности называетя гистограммой.
+
+\subsection{Определение эмпирической функции распределения}
+Пусть
+\begin{itemize}
+    \item \( \vec{X} = (X_1, \ldots, X_n) \) --- случайная выборка из распределения случайной
+        величины \( X \), а \( \vec{x}_n = (x_1, \ldots, x_n) \) --- реализация этой выборки;
+    \item \( h(x, \vec{x}) \) --- количество элементов выборки \( \vec{x} \), 
+        которые имеют значение, меньшее \( x \),
+\end{itemize}
+тогда функция \( F_n(x) = \frac{h(x, \vec{x})}{n} \) называется эмпирической функцией
+распределения, отвечающей выборке \( \vec{x} \). 
