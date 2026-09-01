@@ -1,0 +1,58 @@
+\section{Теоретическая часть}
+\subsection{Определение \( \gamma \)-доверительного интервала для значения
+параметра распределения случайной величины}
+
+Интервальной оценкой уровня \( \gamma \)  параметра \( \theta \) 
+называется пара статистик $\underline \theta (\vec X)$ и $\overline \theta
+(\vec X)$ таких, что:
+\begin{equation*}
+    P\{ \theta \in (\underline{\theta}(\vec{X}),\ \overline{\theta}(\vec{X})) \} = \gamma.
+\end{equation*}
+
+\( \gamma \)-доверительным интервалом для параметра \( \theta \) называется интервал 
+\( (\underline{\theta}(\vec{x}),\ \overline{\theta}(\vec{x})) \), отвечающий выборочным
+значениям интервальной оценки. Можно сказать, что \( \gamma \)-доверительный интервал
+является реализацией интервальной оценки уровня \( \gamma \).
+
+\subsection{Формулы для вычисления границ \( \gamma \)-доверительного интервала 
+для математического ожидания и дисперсии нормальной случайной величины}
+
+Пусть:
+\begin{enumerate}
+    \item \( X \sim N(\mu,\ \sigma^2) \), где  \( \mu \) и \( \sigma^2 \) неизвестны;
+    \item \( \vec{X}_n = (X_1, \ldots,\ X_n) \) --- случайная выборка объема \( n \in \mathbb{N} \)
+    из генеральной совокупности \( X \), а \( \vec{x}_n = (x_1, \ldots,\ x_n) \) --- реализация этой
+    выборки;
+    \item \( \gamma \in  (0;\ 1) \) --- уровень доверия;
+    \item \( t_\alpha^{(n)} \) --- квантиль уровня \( \alpha \) распределения Стьюдента с \( n \) 
+    степенями свободы;
+    \item \( h_\alpha^{(n)} \) --- квантиль уровня \( \alpha \) распределения хи-квадрат с \( n \) 
+    степенями свободы;
+\end{enumerate}
+тогда:
+\begin{itemize}
+    \item оценка математического ожидания: 
+    \begin{equation*}
+        \hat{\mu}(\vec{x}_n) = \overline{x} = \frac{1}{n}\sum_{i=1}^n x_i;   
+    \end{equation*}
+    \item оценка дисперсии: 
+    \begin{equation*}
+        S^2(\vec{x}_n) = \frac{1}{n-1}\sum_{i=1}^n (x_i - \overline{x}^2 );   
+    \end{equation*}
+    \item нижняя граница \( \gamma \)-доверительного интервала для математического ожидания:
+    \begin{equation*}
+        \underline{\mu}(\vec{x}_n) = \overline{x} - \frac{t_{\frac{1+\gamma}{2}}^{(n-1)}S(\vec{x})}{\sqrt{n}};
+    \end{equation*} 
+    \item верхняя граница \( \gamma \)-доверительного интервала для математического ожидания:
+    \begin{equation*}
+        \overline{\mu}(\vec{x}_n) = \overline{x} + \frac{t_{\frac{1+\gamma}{2}}^{(n-1)}S(\vec{x})}{\sqrt{n}};
+    \end{equation*} 
+    \item нижняя граница \( \gamma \)-доверительного интервала для дисперсии:
+    \begin{equation*}
+        \underline{\sigma^2}(\vec{x}_n) = \frac{S^2(\vec{x}_n)(n-1)}{h_{\frac{1+\gamma}{2}}^{(n-1)}};
+    \end{equation*} 
+    \item верхняя граница \( \gamma \)-доверительного интервала для дисперсии:
+    \begin{equation*}
+        \overline{\sigma^2}(\vec{x}_n) = \frac{S^2(\vec{x}_n)(n-1)}{h_{\frac{1-\gamma}{2}}^{(n-1)}}.
+    \end{equation*} 
+\end{itemize}
